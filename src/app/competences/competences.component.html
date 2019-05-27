@@ -1,2 +1,18 @@
 <label for="HTML">HTML</label>
-<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+<mat-slider
+   class = "tp-margin"
+   [disabled] = "disabled"
+   [invert] = "invert"      
+   [thumbLabel] = "thumbLabel"     
+   [(ngModel)] = "value"
+   [vertical] = "vertical">
+</mat-slider>
+<section class = "tp-section">
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "thumbLabel">Show thumb label</mat-checkbox>
+</section>
+<section class = "tp-section">
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "vertical">Vertical</mat-checkbox>
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "invert">Inverted</mat-checkbox>
+</section>
+<section class = "tp-section">
+   <mat-checkbox class = "tp-margin" [(ngModel)] = "disabled">Disabled</mat-checkbox>
