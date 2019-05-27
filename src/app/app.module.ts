@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { ExperiencesComponent } from './experiences/experiences.component';
 import { FormationsComponent } from './formations/formations.component';
-import { CompetenceComponent } from './competence/competence.component';
 import { LanguesComponent } from './langues/langues.component';
+import { CompetencesComponent } from './competences/competences.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +14,11 @@ import { LanguesComponent } from './langues/langues.component';
     HeaderComponent,
     ExperiencesComponent,
     FormationsComponent,
-    CompetenceComponent,
-    LanguesComponent
+    LanguesComponent,
+    CompetencesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-@media all and (min-width: 1024px){
+/* @media all and (min-width: 1024px){ */
     .head{
         display: flex;
         flex-direction: row;
@@ -66,7 +66,7 @@
         color: #7B7D7D;
     }
     
-}
+/* } */
 
 @media all and (max-width: 480px){
     .head{
@@ -126,6 +126,7 @@
 
     h4{
         font-size: 22px;
+        font-family: 'Nanum Gothic', sans-serif;
     }
     h1{
         font-size: 28px;
@@ -168,9 +169,10 @@
 
     h4{
         font-size: 22px;
+        font-family: 'Nanum Gothic', sans-serif;
     }
     h1{
-        font-size: 28px;
+        /* font-size: 28px; */
         font-family: 'Sintony', sans-serif;
     }
     h3{
@@ -184,19 +186,6 @@
         /* float: right; */
         text-align: center;
         margin: auto;
-    }
-
-    h4{
-        font-size: 22px;
-    }
-    h1{
-        font-size: 28px;
-        font-family: 'Sintony', sans-serif;
-    }
-    h3{
-        font-size: 26px;
-        font-family: 'Nanum Gothic', sans-serif;
-        font-weight: lighter;
     }
 
     i{
