@@ -9,6 +9,7 @@ import { FormationsComponent } from './formations/formations.component';
 import { LanguesComponent } from './langues/langues.component';
 import { CompetencesComponent } from './competences/competences.component';
 import { MatSliderModule } from '@angular/material';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatSliderModule } from '@angular/material';
   ],
   imports: [
     BrowserModule,
-    
+    ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatSliderModule
   ],
