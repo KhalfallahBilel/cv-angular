@@ -1,0 +1,28 @@
+section{
+    
+}
+.levels{
+    display: flex;
+    flex-direction: row;
+    margin:0 95px;
+    /* text-align: justify; */
+    /* justify-content: space-between; */
+}
+
+@media all and (max-width: 480px){
+    .levels{
+        display: flex;
+        flex-direction: column;
+        margin:80px 65px;
+        text-align: justify;
+        /* justify-content: space-between; */
+    }
+}
+@media all and (min-width: 480px) and (max-width: 720px){
+    .levels{
+        display: flex;
+        flex-direction: column;
+        margin:80px 65px;
+        text-align: justify;
+    }
+}
