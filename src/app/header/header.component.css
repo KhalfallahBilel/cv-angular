@@ -20,8 +20,8 @@
         margin:0;
     }
     img{
-        /* width: 320px;
-        height:200px; */
+        width: 260px;
+        height:274px;
     }
     p{
         text-align: justify;
@@ -89,6 +89,11 @@
         margin:auto;
     }
 
+    img{
+        width: 260px;
+        height:274px;
+    }
+
     .contact{
         margin-top: 15px;
         display: flex;
@@ -140,6 +145,11 @@
         width: 85%;
         margin:25px auto;
         
+    }
+
+    img{
+        width: 260px;
+        height:274px;
     }
 
     .bande{
@@ -219,8 +229,8 @@
         margin:0;
     }
     img{
-        /* width: 320px;
-        height:200px; */
+        width: 260px;
+        height:274px;
     }
     p{
         text-align: justify;
