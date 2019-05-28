@@ -1,9 +1,15 @@
+.competence{
+    width: 97%;
+}
 .container{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
+
 input[type='range'] {
-    width: 300px;
+    width: 75%;
     height: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -23,16 +29,17 @@ input[type='range'] {
     height: 30px;
     width: 30px;
     margin-top: -10px;
-    background: steelblue;
+    background: #2E86C1;
     border-radius: 50%;
     border: 2px solid white;
   }
-  input[type='range']::-webkit-slider-thumb::before {
-    position: absolute;
-    content: '';
-    height: 10px; /* equal to height of runnable track */
-    width: 500px; /* make this bigger than the widest range input element */
-    left: -502px; /* this should be -2px - width */
-    top: 8px; /* don't change this */
-    background: #777;
-  }
+  /* input[type='range']::-webkit-slider-thumb::before { */
+    /* position: absolute;
+    content: ''; */
+    /* height: 10px; equal to height of runnable track */
+    /* width: 500px; make this bigger than the widest range input element */
+    /* left: -502px; this should be -2px - width */
+    /* top: 8px; don't change this */
+    /* background: #777; */
+  /* } */
+  

@@ -1,3 +1,7 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
 .course{
     display: flex;
     flex-direction: row;
@@ -9,15 +13,22 @@
     display: flex;
     flex-direction: row;
     margin:0 75px;
-    /* text-align: justify; */
     justify-content: space-between;
 }
+
+.comp{
+    width: 50%;
+}
+.lang{
+    width: 50%;
+}
+
 
 @media all and (max-width: 480px){
     .course{
         display: flex;
         flex-direction: column;
-        margin:80px 65px;
+        margin:39px 47px;
         text-align: justify;
         /* justify-content: space-between; */
     }
@@ -28,19 +39,31 @@
         /* text-align: justify; */
         justify-content: space-between;
     }
+    .comp{
+        width: 100%;
+    }
+    .lang{
+        width: 100%;
+    }
 }
 @media all and (min-width: 480px) and (max-width: 720px){
     .course{
         display: flex;
         flex-direction: column;
-        margin:80px 65px;
+        margin:18px 47px;
         text-align: justify;
     }
     .more{
         display: flex;
         flex-direction: column;
-        margin:0 75px;
+        margin:0 45px;
         /* text-align: justify; */
         justify-content: space-between;
+    }
+    .comp{
+        width: 100%;
+    }
+    .lang{
+        width: 100%;
     }
 }
