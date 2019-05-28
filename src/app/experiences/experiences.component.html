@@ -1,12 +1,9 @@
 <div class="exp">
     <h3>Expériences</h3>
     <hr>
-    <h4>année <span>Wentreprise</span> | poste</h4>
-    <p>Manœuvre en bâtiment de construction des
-        piscines. Technicien de revêtement des piscines
-        avec des produits composites (Résine)</p>
-    <h4>année <span>Wentreprise</span> | poste</h4>
-    <p>Manœuvre en bâtiment de construction des
-        piscines. Technicien de revêtement des piscines
-        avec des produits composites (Résine)</p>
+    <div *ngFor="let experience of experiences">
+            <h4>{{experience.date}} <span>{{experience.companyName}}</span> | {{experience.poste}}</h4>
+            <p>{{experience.description}}</p>
+            <p>{{experience.technos}}</p>
+    </div>
 </div>
