@@ -7,7 +7,12 @@
     flex-direction: row;
     margin:0 75px;
     /* text-align: justify; */
+    /* flex-grow: 1; */
+    
     justify-content: space-between;
+}
+.aa{
+    flex-basis: 50%;
 }
 .more{
     display: flex;
@@ -50,6 +55,7 @@
     .course{
         display: flex;
         flex-direction: column;
+        flex-basis: 0;
         margin:18px 47px;
         text-align: justify;
     }
