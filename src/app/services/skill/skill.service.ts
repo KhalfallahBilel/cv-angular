@@ -13,7 +13,7 @@ export class SkillService {
     {
       id: 2,
       skillName: 'brebe',
-      value:75
+      value:21
     },
     {
       id: 3,

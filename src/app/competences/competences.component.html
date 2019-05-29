@@ -1,9 +1,8 @@
 <div class="competence">
     <h3>Compétences</h3>
     <hr>
-    <div *ngFor="let skill of skills">
-        <!-- <div class="container"> -->
-            <span>{{skill.skillName}}</span><input type="range" min="0" max="100" value="75" sdisabled="true" />
-        <!-- </div> -->
+    <div class="container" *ngFor="let skill of skills">
+        <span>{{skill.skillName}}</span><input type="range" min="0" max="100" value="{{skill.value}}" disabled="true" />
+
     </div>
 </div>
