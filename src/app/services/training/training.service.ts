@@ -7,10 +7,10 @@ export class TrainingService {
   formations = [
     {
       id: 1,
-      date: '2011/2012',
-      schoolName: 'What is Lorem Ipsum?',
-      diplome: "Lorem Ipsum is simply dummy text of the ...",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      date: '2018',
+      schoolName: 'SOFTEAM Group',
+      diplome: "Formation Java JEE / ANGULAR",
+      description: "Formation de 3 mois de en Programmation Orienté Objet, Java , JEE, HyberNate, SpringBoot, de coté serveur et HTML5, CSS3, JavaScript, SQL, TypeScript avec ANGULAR4, avec les Bibliothèques et les dépendances comme RGXBootstrap de coté client. Méthode Agile Scrum, UML. Création d’une applicaton web de réservation et vente de billet d’avion avec les technologies cités dessus.."
     },
     {
       id: 2,

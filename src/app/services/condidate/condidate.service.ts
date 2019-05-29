@@ -9,7 +9,7 @@ export class CondidateService {
       id:1,
       firstName: "KHALFALLAH",
       lastName: "BILEL",
-      spec: "Développeur FullStack Angular / Java JEE",
+      spec: "DÉVELOPPEUR WEB FULL STACK",
       age: "33",
       mob: "07 81 39 23 85",
       address: "06100 Nice, France",

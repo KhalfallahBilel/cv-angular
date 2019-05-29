@@ -12,7 +12,7 @@
 .more{
     display: flex;
     flex-direction: row;
-    margin:0 75px;
+    margin:0 75px 25px;
     justify-content: space-between;
 }
 
@@ -35,7 +35,7 @@
     .more{
         display: flex;
         flex-direction: column;
-        margin:0 75px;
+        margin:0 75px 25px;
         /* text-align: justify; */
         justify-content: space-between;
     }
@@ -56,7 +56,7 @@
     .more{
         display: flex;
         flex-direction: column;
-        margin:0 45px;
+        margin:0 45px 25px;
         /* text-align: justify; */
         justify-content: space-between;
     }

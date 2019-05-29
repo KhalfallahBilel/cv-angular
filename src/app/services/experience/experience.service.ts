@@ -6,18 +6,26 @@ import { Injectable } from '@angular/core';
 export class ExperienceService {
    experiences = [
     {
+      id: 0,
+      date: '2018-2019',
+      companyName: 'SCHNEIDER ELECTRIC - Carros',
+      poste:"Développeur FrontEnd Angular",
+      description:"Manœuvre en bâtiment de construction des piscines. Technicien de revêtement des piscines avec des produits composites (Résine)",
+      technos:"ANGULAR 7 NODE JS SASS MICROSOFT AZURE GIT KARMA / JASMINE POSTMAN MULTI FACTOR AUTHENTICATION / JWT"
+    },
+    {
       id: 1,
-      date: '2011/2012',
-      companyName: 'aaa',
-      poste:"nnnnn",
-      description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      technos:"cdsqzc"
+      date: '2015-2018',
+      companyName: 'PA Concept– Mougins',
+      poste:"Technicien de revêtement Piscines",
+      description:"Manœuvre en bâtiment de construction des piscines. Technicien de revêtement des piscines avec des produits composites (Résine)",
+      technos:" "
     },
     {
       id: 2,
-      date: '2011/2012',
-      companyName: 'aaa',
-      poste:"nnnnn",
+      date: '2013-2015',
+      companyName: 'CUISTO– Tunisie',
+      poste:"WebMaster",
       description:"gjf",
       technos:"cqscqs"
     },
