@@ -1,7 +1,8 @@
 <div class="language">
     <h3>Langues</h3>
     <hr>
-    <div class="container">
-        <span>ENGLISH</span><input type="range" min="0" max="5" value="4" disabled="true" />
-    </div>
+    <div class="container" *ngFor="let language of languages">
+            <span>{{language.languageName | uppercase}}</span><input type="range" min="0" max="100" value="{{language.value}}"
+                disabled="true" />
+        </div>
 </div>

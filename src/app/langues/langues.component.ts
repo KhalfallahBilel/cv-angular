@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Language } from '../models/language';
+import { LanguageService } from '../services/language/language.service';
 
 @Component({
   selector: 'app-langues',
@@ -6,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./langues.component.css']
 })
 export class LanguesComponent implements OnInit {
-
-  constructor() { }
+  languages :Language[] = [];
+  constructor(private languageService:LanguageService) { }
 
   ngOnInit() {
+    this.languages = this.languageService.languages;
   }
-
 }
