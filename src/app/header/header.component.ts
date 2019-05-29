@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Condidate } from '../models/condidate';
+import { CondidateService } from '../services/condidate/condidate.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+condidate: Condidate;
+  constructor(private condidateService:CondidateService) { }
 
   ngOnInit() {
+    this.condidate = this.condidateService.condidate;
   }
 
 }

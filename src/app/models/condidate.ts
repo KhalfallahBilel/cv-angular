@@ -8,4 +8,5 @@ export class Condidate{
     email:string;
     link:string;
     about:string;
+    picture:string;
 }

@@ -5,19 +5,17 @@
     <img src="../../assets/profile.jpg" alt="khalfallah bilel">
   </figure>
   <div class="intro">
-    <h1>KHALFALLAH BILEL</h1>
-    <h3>Développeur FullStack Angular / Java JEE</h3>
+    <h1>{{condidate.firstName}} {{condidate.lastName}}</h1>
+    <h3>{{condidate.spec}}</h3>
     <h4>A PROPOS DE MOI</h4>
-    <p>Intéressé par l’informatique depuis mon enfance, Passionné
-        ensuite par le Web et son évolution j’ai choisi de spécialiser mes
-        études et ma vie professionnelle dans le développement web.</p>
+    <p>{{condidate.about}}</p>
       <!-- <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le
           Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, </p> -->
     <div class="contact">
-      <i class="fas fa-mobile-alt">  07 81 39 23 85</i>
-      <i class="fas fa-envelope">  khalfallah.bilel@gmail.com</i>
-      <i class="fas fa-map-marked-alt">  06100 Nice, France</i>
-      <i class="fab fa-github">  https://github.com/KhalfallahBilel</i>
+      <i class="fas fa-mobile-alt">  {{condidate.mob}}</i>
+      <i class="fas fa-envelope">  {{condidate.email}}</i>
+      <i class="fas fa-map-marked-alt">  {{condidate.address}}</i>
+      <i class="fab fa-github">  {{condidate.link}}</i>
     </div>
   </div>
 </section>
