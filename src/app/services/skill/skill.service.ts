@@ -21,19 +21,19 @@ export class SkillService {
       id: 3,
       skillName: 'NoSQL MySQL',
       skill:'BDD',
-      value:75
+      value:65
     },
     {
       id:4,
       skillName:'Visual Studio GIT NetBeans Eclipse Maven Tomcat',
       skill:'Outils',
-      value:75
+      value:90
     },
     {
       id:5,
       skillName:'Adobe Creative Suite',
       skill:'Multimédia',
-      value:75
+      value:80
     }
   ];
   constructor() { }
