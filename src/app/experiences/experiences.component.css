@@ -11,6 +11,9 @@ h4{
 h3{
     font-family: 'Hind', sans-serif;
 }
+.do{
+    margin-bottom: 50px;
+}
 @media all and (min-width: 480px) and (max-width: 720px){
     .exp{
         width: 97%;
