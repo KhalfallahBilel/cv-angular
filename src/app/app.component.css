@@ -55,7 +55,7 @@
     .course{
         display: flex;
         flex-direction: column;
-        flex-basis: 0;
+        /* flex-basis: 0; */
         margin:18px 47px;
         text-align: justify;
     }

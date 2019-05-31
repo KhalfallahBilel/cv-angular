@@ -44,6 +44,22 @@ export class ExperienceService {
       poste:"Responsable Technique",
       description:"gjf",
       technos:"HTML5, CSS3 JAVASCRIPT PHP, SQL PHOTOSHOP, ILLUSTRATOR, COREL DRAW, FTP SERVER, FILEZILLA, GOOGLEANALYTICS"
+    },
+    {
+      id: 5,
+      date: '2011/2012',
+      companyName: 'CPN – TUNISIE',
+      poste:"Formateur en Informatique",
+      description:"gjf",
+      technos:"HTML, CSS, JAVASCRIPT, PHP, SQL, OUTILS OFFICE, PHOTOSHOP, ILLUSTRATOR, DREAMWEAVER, ADOBE FLASH"
+    },
+    {
+      id: 6,
+      date: '2011',
+      companyName: 'OMÉGA CALL CENTER',
+      poste:"Projet de fin d'étude",
+      description:"gjf",
+      technos:"FRAMEWORK WPF .NET/C# MYSQL ARCHITECTURE MVC"
     }
   ];
   constructor() { }
