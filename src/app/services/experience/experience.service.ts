@@ -18,7 +18,7 @@ export class ExperienceService {
       date: '2018',
       companyName: 'SII - Sophia',
       poste:"Développeur web fullStack",
-      description:"Manœuvre en bâtiment de construction des piscines. Technicien de revêtement des piscines avec des produits composites (Résine)",
+      description:"",
       technos:"ANGULAR 5 BOOTSTRAP 4 TYPESCRIPT JAVASCRIPT HTML5, CSS3 JAVA, JEE HIBERNATE, JERSEY, SQL MAVEN"
     },
     {
