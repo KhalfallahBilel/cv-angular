@@ -14,7 +14,7 @@ export class CrudService<T,ID> implements CrudOperations<T,ID> {
   ) { }
 
   httpOptions = {
-    headers: new HttpHeaders().set('Authorization', `Bearer `+localStorage.getItem('tokenf')),
+    headers: new HttpHeaders().set('Authorization', `Bearer `+localStorage.getItem('token')),
     header: new HttpHeaders().set('Content-Type', 'multipart/form-data')
   };
 
@@ -31,14 +31,10 @@ export class CrudService<T,ID> implements CrudOperations<T,ID> {
   }
 
   findAll(): Observable<T[]> {
-    return this._http.get<T[]>(this._base+'/list' ,this.httpOptions)
+    return this._http.get<T[]>(this._base+'/' ,this.httpOptions)
   }
 
   delete(id: ID): Observable<T> {
     return this._http.delete<T>(this._base + '/' + id,this.httpOptions);
-  }
-  
-  findAllByManager(id:ID): Observable<T[]> {
-    return this._http.get<T[]>(this._base+'user/' + id + '/project',this.httpOptions)
   }
 }
