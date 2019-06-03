@@ -58,7 +58,7 @@ export class ExperienceService {
       date: '2011',
       companyName: 'OMÉGA CALL CENTER',
       poste:"Projet de fin d'étude",
-      description:"Stage en développement logiciels (4 mois)<br> Conception et réalisation d’une application exécutable qui gère la gestion des employés et déterminer les fiches de paies pour un centre d’appel",
+      description:"Stage en développement logiciels (4 mois) Conception et réalisation d’une application exécutable qui gère la gestion des employés et déterminer les fiches de paies pour un centre d’appel",
       technos:"FRAMEWORK WPF .NET/C# MYSQL ARCHITECTURE MVC"
     }
   ];
