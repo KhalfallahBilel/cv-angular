@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { CrudOperations } from '../models/crud-operations.interface';
-import { HttpClient, HttpHeaders } from '@angular/common/http/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'

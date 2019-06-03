@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CrudService } from '../crud.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CondidateService {
+export class CondidateService extends CrudService<any,number>{
   condidate = 
     {
       id:1,
@@ -19,5 +21,7 @@ export class CondidateService {
       picture: "string",
     }
   
-  constructor() { }
+    constructor(protected _http: HttpClient) {
+      super(_http,'url');
+    }
 }

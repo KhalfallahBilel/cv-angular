@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { CrudService } from '../crud.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LanguageService {
+export class LanguageService extends CrudService<any,number>{
   languages = [
     {
       id: 1,
@@ -21,5 +23,7 @@ export class LanguageService {
       value:55
     }
   ];
-  constructor() { }
+  constructor(protected _http: HttpClient) {
+    super(_http,'url');
+  }
 }

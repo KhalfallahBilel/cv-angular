@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { CrudService } from '../crud.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TrainingService {
+export class TrainingService extends CrudService<any, number>{
   formations = [
     {
       id: 1,
@@ -20,5 +22,7 @@ export class TrainingService {
       description: "Apprendre les techniques de traitement des logiciels de retouches images, les logiciels de programmations, les notions et les algorithmiques des différentes langages de programmation et le programmation orienté objet."
     }
   ];
-  constructor() { }
+  constructor(protected _http: HttpClient) {
+    super(_http,'url');
+  }
 }

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { CrudService } from '../crud.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExperienceService {
+export class ExperienceService extends CrudService<any,number>{
    experiences = [
     {
       id: 0,
@@ -62,5 +64,7 @@ export class ExperienceService {
       technos:"FRAMEWORK WPF .NET/C# MYSQL ARCHITECTURE MVC"
     }
   ];
-  constructor() { }
+  constructor(protected _http: HttpClient) {
+    super(_http,'url');
+  }
 }

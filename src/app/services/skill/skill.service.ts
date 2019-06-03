@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { CrudService } from '../crud.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SkillService {
+export class SkillService extends CrudService<any, number>{
   skills = [
     {
       id: 1,
@@ -36,5 +38,7 @@ export class SkillService {
       value:80
     }
   ];
-  constructor() { }
+  constructor(protected _http: HttpClient) {
+    super(_http,'url');
+  }
 }
