@@ -16,6 +16,12 @@ import { LanguesComponent } from './langues/langues.component';
 import { DynamicFieldDirective } from './elements/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './elements/dynamic-form/dynamic-form.component';
 import { RouterModule } from '@angular/router';
+import { InputComponent } from './elements/input/input.component';
+import { ButtonComponent } from './elements/button/button.component';
+import { SelectComponent } from './elements/select/select.component';
+import { TextareaComponent } from './elements/textarea/textarea.component';
+import { FileComponent } from './elements/file/file.components';
+import { ForbiddenComponent } from './auth/forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,13 @@ import { RouterModule } from '@angular/router';
     AuthComponent,
     DashboardComponent,
     DynamicFieldDirective,
-    DynamicFormComponent
+    DynamicFormComponent, 
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    TextareaComponent,
+    FileComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +52,13 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   providers: [],
+  entryComponents: [
+    InputComponent,
+    ButtonComponent,
+    SelectComponent,
+    TextareaComponent,
+    FileComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
