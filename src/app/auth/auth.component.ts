@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DynamicFormComponent } from '../elements/dynamic-form/dynamic-form.component';
 import { Validators } from '@angular/forms';
 import { FieldConfig } from '../models/field.interface';
-import { AuthenticationService } from '../authentication.service';
+import { AuthenticationService } from '../services/auth/authentication.service';
 import { Router } from '@angular/router';
 
 @Component({
