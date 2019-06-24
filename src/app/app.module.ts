@@ -15,6 +15,7 @@ import { FormationsComponent } from './formations/formations.component';
 import { LanguesComponent } from './langues/langues.component';
 import { DynamicFieldDirective } from './elements/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './elements/dynamic-form/dynamic-form.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DynamicFormComponent } from './elements/dynamic-form/dynamic-form.compo
     FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
