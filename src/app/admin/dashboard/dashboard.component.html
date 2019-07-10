@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="currentUser">
+  <a class="navbar-brand" href="#" *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</a>
+  <div class="form-inline my-2 my-lg-0 " style="justify-content: last baseline">
+    <a class="nav-item nav-link" routerLink="/">Home</a>
+    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    <a class="nav-item nav-link" routerLink="/">Candidate</a>
+    <a class="nav-item nav-link" routerLink="/">Skills</a>
+    <a class="nav-item nav-link" routerLink="/">Training</a>
+    <a class="nav-item nav-link" routerLink="/">Experiences</a>
+    <a class="nav-item nav-link" routerLink="/">Languages</a>
+  </div>
+</nav>
+
+<!-- main app container -->
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<p>
+  dashboard works!
+</p>

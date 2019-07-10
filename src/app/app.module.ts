@@ -1,27 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { CompetencesComponent } from './competences/competences.component';
-import { MatSliderModule } from '@angular/material';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CompetencesComponent } from './home/competences/competences.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { ExperiencesComponent } from './experiences/experiences.component';
-import { FormationsComponent } from './formations/formations.component';
-import { LanguesComponent } from './langues/langues.component';
-import { DynamicFieldDirective } from './elements/dynamic-field/dynamic-field.directive';
-import { DynamicFormComponent } from './elements/dynamic-form/dynamic-form.component';
-import { RouterModule } from '@angular/router';
-import { InputComponent } from './elements/input/input.component';
-import { ButtonComponent } from './elements/button/button.component';
-import { SelectComponent } from './elements/select/select.component';
-import { TextareaComponent } from './elements/textarea/textarea.component';
-import { FileComponent } from './elements/file/file.components';
+import { ExperiencesComponent } from './home/experiences/experiences.component';
+import { FormationsComponent } from './home/formations/formations.component';
+import { LanguesComponent } from './home/langues/langues.component';
 import { ForbiddenComponent } from './auth/forbidden/forbidden.component';
+import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { BasicAuthInterceptor } from './helpers/basicAuth.interceptor';
+import { ErrorInterceptor } from './helpers/error.Interceptor';
+import { fakeBackendProvider } from './helpers/fake-backend';
+import { appRoutingModule } from './routing/routing.module';
+import { DynamicFormBuilderModule } from './dynamic-form-builder/dynamic-form-builder.module';
+import { LanguagesComponent } from './admin/dashboard/languages/languages.component';
+import { AddExperienceComponent } from './admin/dashboard/experiences/add-experience/add-experience.component';
+import { EditExperienceComponent } from './admin/dashboard/experiences/edit-experience/edit-experience.component';
+import { AddCompetencesComponent } from './admin/dashboard/competences/add-competences/add-competences.component';
+import { EditCompetencesComponent } from './admin/dashboard/competences/edit-competences/edit-competences.component';
+import { AddFormationComponent } from './admin/dashboard/formations/add-formation/add-formation.component';
+import { EditFormationComponent } from './admin/dashboard/formations/edit-formation/edit-formation.component';
+import { AddLanguageComponent } from './admin/dashboard/languages/add-language/add-language.component';
+import { EditLanguageComponent } from './admin/dashboard/languages/edit-language/edit-language.component';
 
 @NgModule({
   declarations: [
@@ -33,31 +38,31 @@ import { ForbiddenComponent } from './auth/forbidden/forbidden.component';
     CompetencesComponent,
     AuthComponent,
     DashboardComponent,
-    DynamicFieldDirective,
-    DynamicFormComponent, 
-    InputComponent,
-    ButtonComponent,
-    SelectComponent,
-    TextareaComponent,
-    FileComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    HomeComponent,
+    LanguagesComponent,
+    AddExperienceComponent,
+    EditExperienceComponent,
+    AddFormationComponent,
+    EditFormationComponent,
+    AddCompetencesComponent,
+    EditCompetencesComponent,
+    AddLanguageComponent,
+    EditLanguageComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
     HttpClientModule,
-    RouterModule
+    DynamicFormBuilderModule,
+    appRoutingModule
   ],
-  providers: [],
-  entryComponents: [
-    InputComponent,
-    ButtonComponent,
-    SelectComponent,
-    TextareaComponent,
-    FileComponent
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+    // provider used to create fake backend for login
+    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

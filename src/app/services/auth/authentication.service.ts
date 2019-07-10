@@ -1,89 +1,40 @@
 import { Injectable } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { HttpHeaders, HttpClient } from '@angular/common/http';
-import { Router, ActivatedRoute } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { CookieService } from 'ngx-cookie-service';
+import { User } from 'src/app/models/user';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+    private currentUserSubject: BehaviorSubject<User>;
+    public currentUser: Observable<User>;
 
- //pour stocker le token
- token: string;
- //pour stocker un role de user connecté
- role: string;
- //stocker l'id de user connecté
- id: string;
- //Initialiser une API
- //api_url = environment.baseUrl;
- //payload de type json
- headers = new HttpHeaders({
-   'Content-Type': 'application/json'
- });
+    constructor(private http: HttpClient) {
+        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUser = this.currentUserSubject.asObservable();
+    }
 
- //Injecter les dépendances
- constructor(
-   private http: HttpClient,
-   private router: Router,
-   private route: ActivatedRoute,
-   private cookieService: CookieService
- ) { }
+    public get currentUserValue(): User {
+        return this.currentUserSubject.value;
+    }
 
- //Methode login qui prend email et password en param
- login(payload:FormGroup) {
-   //const url = this.api_url + 'auth/login';
-   //method post renvoie un observable de type any 
-   return this.http.post<any>("url", payload, { headers: this.headers })
-     .pipe(
-       map(
-         result => {
-           //recuperer token de result
-           this.token = result.token;
-           //on renvoie le result
-           return result;
-         })
-     );
- }
+    login(username: string, password: string) {
+        return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username, password })
+            .pipe(map(user => {
+                // store user details and basic auth credentials in local storage to keep user logged in between page refreshes
+                user.authdata = window.btoa(username + ':' + password);
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                this.currentUserSubject.next(user);
+                return user;
+            }));
+    }
 
- 
-
- //Methode resetpassword avec un email en param
- resetPassword(password: string, confirmPassword: string) {
-   //Définir un objet js content avec un password et un confirm password et on le converti en objet json
-   var content = JSON.stringify({
-     password1: password,
-     password2: confirmPassword,
-     token: this.token
-   });
-   //const url = this.api_url + 'auth/password/reset';
-   //method post renvoie un observable de type any
-   return this.http.post<any>("url", content, { headers: this.headers });
- }
-
- //récuperer le user
- getUser() {
-   let user =this.cookieService.get('user');
-   if (user) {
-     return JSON.parse(this.cookieService.get('user'));
-   } else {
-     this.router.navigateByUrl('login');
-   }
-   
- }
- 
- isAuth(){
-   let auth = localStorage.getItem('tokenf');
-   if((auth)){
-     return true
-   }
- }
-
- //deconnecter on vide le cookie et localstorage
- logout() {
-   localStorage.clear();
-   this.cookieService.deleteAll();
-   this.router.navigateByUrl('login');
- }
+    logout() {
+        // remove user from local storage to log user out
+        localStorage.removeItem('currentUser');
+        this.currentUserSubject.next(null);
+    }
 }
