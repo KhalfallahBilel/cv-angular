@@ -1,0 +1,8 @@
+<div class="form">
+  <h3>Formations</h3>
+  <hr>
+  <div *ngFor="let formation of formations">
+      <h4>{{formation.date}} <span>{{formation.schoolName}}</span> | {{formation.diplome}}</h4>
+      <p>{{formation.description}}</p>
+  </div>
+</div>

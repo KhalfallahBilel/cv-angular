@@ -16,25 +16,11 @@ export class DashboardComponent implements OnInit {
   users: User[];
 
   constructor(
-    private userService: UserService,
-    private router: Router,
-    private authenticationService: AuthenticationService
   ) {
-    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
 
   ngOnInit() {
-    this.loading = true;
-    this.userService.getAll().pipe(first()).subscribe(users => {
-      this.loading = false;
-      this.users = users;
-    });
-  }
-
-  logout() {
-    this.authenticationService.logout();
-    this.router.navigate(['/login']);
   }
 
 }
