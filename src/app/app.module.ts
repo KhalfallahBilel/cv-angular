@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AuthComponent } from './auth/auth.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -14,14 +16,6 @@ import { ErrorInterceptor } from './helpers/error.Interceptor';
 import { fakeBackendProvider } from './helpers/fake-backend';
 import { appRoutingModule } from './routing/routing.module';
 import { LanguagesComponent } from './admin/dashboard/languages/languages.component';
-import { AddExperienceComponent } from './admin/dashboard/experiences/add-experience/add-experience.component';
-import { EditExperienceComponent } from './admin/dashboard/experiences/edit-experience/edit-experience.component';
-import { AddCompetencesComponent } from './admin/dashboard/competences/add-competences/add-competences.component';
-import { EditCompetencesComponent } from './admin/dashboard/competences/edit-competences/edit-competences.component';
-import { AddFormationComponent } from './admin/dashboard/formations/add-formation/add-formation.component';
-import { EditFormationComponent } from './admin/dashboard/formations/edit-formation/edit-formation.component';
-import { AddLanguageComponent } from './admin/dashboard/languages/add-language/add-language.component';
-import { EditLanguageComponent } from './admin/dashboard/languages/edit-language/edit-language.component';
 import { SkillsCvComponent } from './home/skills-cv/skills-cv.component';
 import { ExperiencesCvComponent } from './home/experiences-cv/experiences-cv.component';
 import { TrainingCvComponent } from './home/training-cv/training-cv.component';
@@ -38,6 +32,11 @@ import { FileComponent } from './admin/elements/file/file.components';
 import { DynamicFieldDirective } from './admin/elements/dynamic-field/dynamic-field.directive';
 import { DynamicFormComponent } from './admin/elements/dynamic-form/dynamic-form.component';
 
+import {AccordionModule} from 'primeng/accordion';       
+import { TableModule } from 'primeng/table';
+import { DialogModule } from 'primeng/components/dialog/dialog';
+import { InputTextModule } from 'primeng/components/inputtext/inputtext';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,14 +46,6 @@ import { DynamicFormComponent } from './admin/elements/dynamic-form/dynamic-form
     ForbiddenComponent,
     HomeComponent,
     LanguagesComponent,
-    AddExperienceComponent,
-    EditExperienceComponent,
-    AddFormationComponent,
-    EditFormationComponent,
-    AddCompetencesComponent,
-    EditCompetencesComponent,
-    AddLanguageComponent,
-    EditLanguageComponent,
     SkillsCvComponent,
     ExperiencesCvComponent,
     TrainingCvComponent,
@@ -70,13 +61,21 @@ import { DynamicFormComponent } from './admin/elements/dynamic-form/dynamic-form
     TextareaComponent,
     FileComponent,
     DynamicFieldDirective,
-    DynamicFormComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
-    appRoutingModule
+    appRoutingModule,
+    BrowserAnimationsModule,
+    AccordionModule,
+    TableModule,
+    DialogModule,
+    FormsModule,
+    InputTextModule,
+    ButtonModule
+    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },

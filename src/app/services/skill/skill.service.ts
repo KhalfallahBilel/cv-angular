@@ -9,32 +9,32 @@ export class SkillService extends CrudService<any, number>{
   skills = [
     {
       id: 1,
-      skillName: 'HTML JavaScript SQL CSS3 J2EE PHP HTML5 TypeScript JAVA',
-      skill:'Languages et WEB',
+      skill: 'HTML JavaScript SQL CSS3 J2EE PHP HTML5 TypeScript JAVA',
+      skillName:'Languages et WEB',
       value:80
     },
     {
       id: 2,
-      skillName: 'WebServices Angular 2+ NodeJS REST Hibernate Spring',
-      skill:'Farmeworks',
+      skill: 'WebServices Angular 2+ NodeJS REST Hibernate Spring',
+      skillName:'Farmeworks',
       value:80
     },
     {
       id: 3,
-      skillName: 'NoSQL MySQL',
-      skill:'BDD',
+      skill: 'NoSQL MySQL',
+      skillName:'BDD',
       value:65
     },
     {
       id:4,
-      skillName:'Visual Studio GIT NetBeans Eclipse Maven Tomcat',
-      skill:'Outils',
+      skill:'Visual Studio GIT NetBeans Eclipse Maven Tomcat',
+      skillName:'Outils',
       value:90
     },
     {
       id:5,
-      skillName:'Adobe Creative Suite',
-      skill:'Multimédia',
+      skill:'Adobe Creative Suite',
+      skillName:'Multimédia',
       value:80
     }
   ];
