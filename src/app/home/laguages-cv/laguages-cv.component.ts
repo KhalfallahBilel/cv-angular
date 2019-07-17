@@ -8,10 +8,15 @@ import { LanguageService } from 'src/app/services/language/language.service';
   styleUrls: ['./laguages-cv.component.css']
 })
 export class LaguagesCvComponent implements OnInit {
-  languages :Language[] = [];
-  constructor(private languageService:LanguageService) { }
+  languages: Language[];
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit() {
-    this.languages = this.languageService.languages;
+    this.getLanguages();
+  }
+
+  getLanguages(): void {
+    this.languageService.findAll()
+      .subscribe(languages => this.languages = languages);
   }
 }

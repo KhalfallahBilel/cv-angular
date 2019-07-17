@@ -1,0 +1,72 @@
+<app-nav></app-nav>
+<p-table [columns]="cols" [value]="languages" selectionMode="single" [(selection)]="selectedLanguage"
+    (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="5">
+    <ng-template pTemplate="caption">
+        List of Languages
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="summary" let-rowData>
+        <div style="text-align:left">
+            <button type="button" pButton icon="fa fa-plus" (click)="showDialogToAdd()" label="Add"></button>
+        </div>
+    </ng-template>
+</p-table>
+
+<p-dialog header="Language Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
+    [style]="{width: '80%'}">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" *ngIf="language">
+        <form [formGroup]="form">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Language Name *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="languageName" formControlName="languageName" [(ngModel)]="language.languageName" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Language Name is required"
+                        *ngIf="!form.controls['languageName'].valid&&form.controls['languageName'].dirty"></p-message>
+                </div>
+                
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Value *:
+                </div>
+                <div class="ui-g-8">
+                    <input type="number" min="1" max="5" pInputText id="value" formControlName="value"
+                        [(ngModel)]="language.value" />
+                        <!-- <p-rating [(ngModel)]="val2" formControlName="value" (onRate)="handleRate($event)" (onCancel)="handleCancel($event)"></p-rating> <span *ngIf="msg" style="margin-left:10px">{{msg}}</span> -->
+
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error"
+                        [text]="form.controls['value'].errors['required'] ? 'Value is required' : (form.controls['value'].errors['min']||form.controls['value'].errors['max']) ? 'Must be in 1 & 100' : ''"
+                        *ngIf="!form.controls['value'].valid&&form.controls['value'].dirty"></p-message>
+                </div>
+            </div>
+        </form>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa fa-times" (click)="delete(language.id)" label="Delete"></button>
+            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"
+                [disabled]="!form.valid"></button>
+        </div>
+    </p-footer>
+</p-dialog>
+<!-- *ngIf="Skill" -->

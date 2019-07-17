@@ -1,7 +1,8 @@
-export class Experience{
-    date:string;
-    companyName:string;
-    poste:string;
-    description:string;
-    technos:string;
+export interface Experience{
+    id;
+    date;
+    companyName;
+    poste;
+    description;
+    technos;
 }

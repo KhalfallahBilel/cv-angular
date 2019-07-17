@@ -5,8 +5,8 @@ import { CrudService } from '../crud.service';
 @Injectable({
   providedIn: 'root'
 })
-export class LanguageService extends CrudService<any,number>{
-  constructor(protected _http: HttpClient) {
-    super(_http,'api/languages');
-  }
+export class CandidateService extends CrudService<any,number>{
+    constructor(protected _http: HttpClient) {
+      super(_http,'api/candidate');
+    }
 }

@@ -8,10 +8,15 @@ import { SkillService } from 'src/app/services/skill/skill.service';
   styleUrls: ['./skills-cv.component.css']
 })
 export class SkillsCvComponent implements OnInit {
-  skills :Skill[] = [];
-  constructor(private skillService:SkillService) { }
+  skills: Skill[];
+  constructor(private skillService: SkillService) { }
 
   ngOnInit() {
-    this.skills = this.skillService.skills;
+    this.getSkills();
+  }
+
+  getSkills(): void {
+    this.skillService.findAll()
+      .subscribe(skills => this.skills = skills);
   }
 }

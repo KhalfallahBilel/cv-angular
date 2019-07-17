@@ -23,6 +23,7 @@
     "@angular/router": "~7.2.0",
     "angular-bootstrap-md": "^7.5.3",
     "angular-crud": "^0.1.3",
+    "angular-in-memory-web-api": "^0.8.0",
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "ngx-cookie-service": "^2.2.0",

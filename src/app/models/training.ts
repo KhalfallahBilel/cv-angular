@@ -1,6 +1,7 @@
-export class Training{
-    date:string;
-    schoolName:string;
-    diplome:string;
-    description:string; 
+export interface Training{
+    id;
+    date;
+    schoolName;
+    diplome;
+    description; 
 }

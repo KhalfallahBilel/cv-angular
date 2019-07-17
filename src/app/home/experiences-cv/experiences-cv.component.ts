@@ -8,11 +8,14 @@ import { ExperienceService } from 'src/app/services/experience/experience.servic
   styleUrls: ['./experiences-cv.component.css']
 })
 export class ExperiencesCvComponent implements OnInit {
-  experiences :Experience[] = [];
+  experiences :Experience[];
   constructor(private experienceService:ExperienceService) { }
 
   ngOnInit() {
-    this.experiences = this.experienceService.experiences;
+    this.getExperiences();
   }
-
+  getExperiences(): void {
+    this.experienceService.findAll()
+      .subscribe(experiences => this.experiences = experiences);
+  }
 }

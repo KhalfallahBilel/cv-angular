@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Condidate } from '../models/condidate';
-import { CondidateService } from '../services/condidate/condidate.service';
+import { Candidate } from '../models/candidate';
+import { CandidateService } from '../services/condidate/candidate.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +8,20 @@ import { CondidateService } from '../services/condidate/condidate.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-condidate: Condidate;
-  constructor(private condidateService:CondidateService) { }
+  candidates: Candidate[];
+  candidate: Candidate;
+  constructor(private candidateService: CandidateService) { }
 
   ngOnInit() {
-    this.condidate = this.condidateService.condidate;
+    this.getCandidates();
+    this.getCandidate();
+  }
+
+  getCandidates() {
+    this.candidateService.findAll().subscribe(candidates => this.candidates = candidates);
+  }
+  getCandidate() {
+    this.candidateService.findOne(1).subscribe(candidate => this.candidate = candidate);
   }
 
 }

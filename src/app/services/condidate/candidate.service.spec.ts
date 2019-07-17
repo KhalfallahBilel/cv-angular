@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CondidateService } from './condidate.service';
+import { CandidateService } from './candidate.service';
 
-describe('CondidateService', () => {
+describe('CandidateService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CondidateService = TestBed.get(CondidateService);
+    const service: CandidateService = TestBed.get(CandidateService);
     expect(service).toBeTruthy();
   });
 });

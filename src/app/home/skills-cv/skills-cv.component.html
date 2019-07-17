@@ -2,7 +2,12 @@
   <h3>Compétences</h3>
   <hr>
   <div class="container" *ngFor="let skill of skills">
-      <span>{{skill.skill}} : {{skill.skillName | uppercase}}</span><input type="range" min="0" max="100" value="{{skill.value}}"
-          disabled="true" />
+    <span>{{skill.skillName}} : {{skill.skill | uppercase}}</span>
+    <!-- <div class="progress">
+      <div class="progress-bar" role="progressbar" [style.width.%]="skill.value" aria-valuenow="skill.value" aria-valuemin="0"
+        aria-valuemax="100">{{skill.value}}</div>
+    </div> -->
+    <p-rating [ngModel]="skill.value" readonly="true" [cancel]="false"></p-rating>
+
   </div>
 </div>

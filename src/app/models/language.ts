@@ -1,4 +1,5 @@
-export class Language{
-    languageName:string;
-    value:number;
+export interface Language{
+    id;
+    languageName;
+    value;
 }
