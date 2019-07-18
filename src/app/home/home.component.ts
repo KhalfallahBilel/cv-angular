@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+ isAuth:boolean;
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() {    
+    if(localStorage.getItem('currentUser')){
+      this.isAuth=true;
+      console.log(this.isAuth);
+      console.log(localStorage.getItem('currentUser'));
+      
+    }
   }
 
 }

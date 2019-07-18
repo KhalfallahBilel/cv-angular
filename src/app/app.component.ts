@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'CV';
   isAuth:boolean;
-ngOnInit(){
-  if(localStorage.getItem('currentUser')){
-    this.isAuth=true;
-  }
-}
-  
+  constructor() { }
+
+  ngOnInit() {    
+    if(localStorage.getItem('currentUser')){
+      this.isAuth=true;
+      console.log(this.isAuth);
+      console.log(localStorage.getItem('currentUser'));
+      
+    }
+  } 
 }

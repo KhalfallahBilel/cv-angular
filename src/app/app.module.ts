@@ -44,6 +44,7 @@ import {FileUploadModule} from 'primeng/fileupload';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from '../app/services/inMemoryData/in-memory-data.service';
+import { UserService } from './services/user/user.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +95,7 @@ import { InMemoryDataService }  from '../app/services/inMemoryData/in-memory-dat
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
     // provider used to create fake backend for login
-    fakeBackendProvider
+    fakeBackendProvider,UserService
   ],
   bootstrap: [AppComponent]
 })
