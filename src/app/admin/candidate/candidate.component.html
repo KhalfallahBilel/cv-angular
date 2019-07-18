@@ -1,3 +1,138 @@
-<p>
-  candidate works!
-</p>
+<p-table [columns]="cols" [value]="candidates" selectionMode="single" [(selection)]="selectedCandidate"
+    (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="5" [resizableColumns]="true">
+    <ng-template pTemplate="caption">
+        List of Candidates
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field" pResizableColumn>
+                {{col.header}}
+                <p-sortIcon [field]="col.field"></p-sortIcon>
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns" class="ui-resizable-column">
+                {{rowData[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+<p-dialog header="Candidate Details" [(visible)]="displayDialog" [responsive]="true" showEffect="fade" [modal]="true"
+    [style]="{width: '80%'}">
+    <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" *ngIf="candidate">
+        <form [formGroup]="form">
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    First Name *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText type="text" id="firstName" formControlName="firstName" [(ngModel)]="candidate.firstName" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="First Name is required"
+                        *ngIf="!form.controls['firstName'].valid&&form.controls['firstName'].dirty"></p-message>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Last Name *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="lastName" formControlName="lastName" [(ngModel)]="candidate.lastName" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Last Name is required"
+                        *ngIf="!form.controls['lastName'].valid&&form.controls['lastName'].dirty"></p-message>
+                </div>
+                
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Speciality *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="spec" formControlName="spec" [(ngModel)]="candidate.spec" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Speciality is required"
+                        *ngIf="!form.controls['spec'].valid&&form.controls['spec'].dirty"></p-message>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Mobile *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="mob" formControlName="mob" [(ngModel)]="candidate.mob" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Mobile is required"
+                        *ngIf="!form.controls['mob'].valid&&form.controls['mob'].dirty"></p-message>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Address *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="mob" formControlName="address" [(ngModel)]="candidate.address" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Address is required"
+                        *ngIf="!form.controls['address'].valid&&form.controls['address'].dirty"></p-message>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Email *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="email" formControlName="email" [(ngModel)]="candidate.email" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Email is required"
+                        *ngIf="!form.controls['email'].valid&&form.controls['email'].dirty"></p-message>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+                <div class="ui-grid-col-2">
+                    Link *:
+                </div>
+                <div class="ui-g-8">
+                    <input pInputText id="link" formControlName="link" [(ngModel)]="candidate.link" />
+                </div>
+                <div class="ui-grid-col-4">
+                    <p-message severity="error" text="Link is required"
+                        *ngIf="!form.controls['link'].valid&&form.controls['link'].dirty"></p-message>
+                </div>
+            </div>
+            <div class="ui-grid-row">
+              <div class="ui-grid-col-2">
+                  About *:
+              </div>
+              <div class="ui-grid-col-8">
+                  <textarea pInputTextarea type="text"  id="about" formControlName="about" [(ngModel)]="candidate.about"></textarea>
+              </div>
+              <div class="ui-grid-col-4">
+                  <p-message severity="error" text="About is required"
+                      *ngIf="!form.controls['about'].valid&&form.controls['about'].dirty"></p-message>
+              </div>
+              
+          </div>
+          <p-fileUpload
+          customUpload="true"
+          (uploadHandler)="onFileUpload($event)">
+     </p-fileUpload>
+        </form>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button type="button" pButton icon="fa fa-times" (click)="delete(candidate.id)" label="Delete"></button>
+            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"
+                [disabled]="!form.valid"></button>
+        </div>
+    </p-footer>
+</p-dialog>

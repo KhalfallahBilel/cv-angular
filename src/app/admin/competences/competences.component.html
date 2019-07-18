@@ -1,12 +1,11 @@
-<app-nav></app-nav>
 <p-table [columns]="cols" [value]="skills" selectionMode="single" [(selection)]="selectedSkill"
-    (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="5">
+    (onRowSelect)="onRowSelect($event)" [paginator]="true" [rows]="5" [resizableColumns]="true">
     <ng-template pTemplate="caption">
         List of Skills
     </ng-template>
     <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+            <th *ngFor="let col of columns" [pSortableColumn]="col.field" pResizableColumn>
                 {{col.header}}
                 <p-sortIcon [field]="col.field"></p-sortIcon>
             </th>
@@ -14,7 +13,7 @@
     </ng-template>
     <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr [pSelectableRow]="rowData">
-            <td *ngFor="let col of columns">
+            <td *ngFor="let col of columns" class="ui-resizable-column">
                 {{rowData[col.field]}}
             </td>
         </tr>
@@ -53,7 +52,7 @@
                     <p-message severity="error" text="Skill Name is required"
                         *ngIf="!form.controls['skillName'].valid&&form.controls['skillName'].dirty"></p-message>
                 </div>
-                
+
             </div>
             <div class="ui-grid-row">
                 <div class="ui-grid-col-2">
@@ -62,8 +61,6 @@
                 <div class="ui-g-8">
                     <input type="number" min="1" max="5" pInputText id="value" formControlName="value"
                         [(ngModel)]="skill.value" />
-                        <!-- <p-rating [(ngModel)]="val2" formControlName="value" (onRate)="handleRate($event)" (onCancel)="handleCancel($event)"></p-rating> <span *ngIf="msg" style="margin-left:10px">{{msg}}</span> -->
-
                 </div>
                 <div class="ui-grid-col-4">
                     <p-message severity="error"
@@ -81,4 +78,3 @@
         </div>
     </p-footer>
 </p-dialog>
-<!-- *ngIf="Skill" -->

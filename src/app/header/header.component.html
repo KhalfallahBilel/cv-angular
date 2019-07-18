@@ -5,17 +5,17 @@
     <img src="{{candidate?.picture}}" alt="khalfallah bilel">
   </figure>
   <div class="intro">
-    <h1>{{candidate.firstName}} {{candidate.lastName}}</h1>
-    <h3>{{candidate.spec}}</h3>
+    <h1>{{candidate?.firstName}} {{candidate?.lastName}}</h1>
+    <h3>{{candidate?.spec}}</h3>
     <h4>A PROPOS DE MOI</h4>
-    <p>{{candidate.about}}</p>
+    <p>{{candidate?.about}}</p>
       <!-- <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le
           Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, </p> -->
     <div class="contact">
-      <i class="fas fa-mobile-alt">  {{candidate.mob}}</i>
-      <i class="fas fa-envelope">  {{candidate.email}}</i>
-      <i class="fas fa-map-marked-alt">  {{candidate.address}}</i>
-      <i class="fab fa-github">  {{candidate.link}}</i>
+      <i class="fas fa-mobile-alt">  {{candidate?.mob}}</i>
+      <i class="fas fa-envelope">  {{candidate?.email}}</i>
+      <i class="fas fa-map-marked-alt">  {{candidate?.address}}</i>
+      <i class="fab fa-github">  {{candidate?.link}}</i>
     </div>
   </div>
 </section>

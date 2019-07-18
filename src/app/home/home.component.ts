@@ -1,8 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../models/user';
-import { UserService } from '../services/user/user.service';
-import { first } from 'rxjs/operators';
-import { AuthenticationService } from '../services/auth/authentication.service';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +6,9 @@ import { AuthenticationService } from '../services/auth/authentication.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
- isAuth:boolean;
-  constructor(private authService:AuthenticationService) { }
+  constructor() { }
 
-  ngOnInit() {    
-    if(localStorage.getItem('currentUser')){
-      this.isAuth=true;
-    }
+  ngOnInit() {
   }
 
 }
