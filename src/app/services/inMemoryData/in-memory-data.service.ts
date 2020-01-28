@@ -5,9 +5,7 @@ import { Experience } from 'src/app/models/experience';
 import { Training } from 'src/app/models/training';
 import { Candidate } from 'src/app/models/candidate';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class InMemoryDataService implements InMemoryDataService {
   createDb() {
     let skills = [

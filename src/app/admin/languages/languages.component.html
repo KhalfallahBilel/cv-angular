@@ -62,7 +62,7 @@
     <p-footer>
         <div class="ui-dialog-buttonpane ui-helper-clearfix">
             <button type="button" pButton icon="fa fa-times" (click)="delete(language.id)" label="Delete"></button>
-            <button type="button" pButton icon="fa fa-check" (click)="save()" label="Save"
+            <button type="button" pButton icon="fa fa-check" (click)="save(language.id)" label="Save"
                 [disabled]="!form.valid"></button>
         </div>
     </p-footer>

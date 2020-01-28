@@ -3,9 +3,7 @@ import { environment } from 'src/environments/environment';
 import { User } from 'src/app/models/user';
 import { HttpClient } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
   constructor(private http: HttpClient) { }
 

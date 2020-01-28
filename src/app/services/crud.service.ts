@@ -7,9 +7,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CrudService<T,ID> implements CrudOperations<T,ID> {
 
   constructor(
