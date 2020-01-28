@@ -142,7 +142,7 @@ export class InMemoryDataService implements InMemoryDataService {
         email:'khalfallah.bilel@gmail.com',
         link:'https://github.com/KhalfallahBilel',
         about:'Intéressé par l/’informatique depuis mon enfance, Passionné ensuite par le Web et son évolution j’ai choisi de spécialiser mes études et ma vie professionnelle dans le développement web.',
-        picture:'../../assets/profile.jpg'        
+        picture:'../../profile.png'        
       }
     ];
     return { skills, languages, experiences, trainings,candidate };
